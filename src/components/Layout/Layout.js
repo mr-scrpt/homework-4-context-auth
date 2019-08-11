@@ -29,7 +29,7 @@ class Layout extends PureComponent {
 
   renderMain = (content) =>{
     const {header,footer} = this.props;
-    const classForMain = `main${header ? ' main--with-header': ''}${footer ? ' main--with-footer': ''}`;
+    const classForMain = `main ${header ? 'main--with-header': ''} ${footer ? 'main--with-footer': ''}`;
 
     return (
       <main className={classForMain}>
@@ -49,10 +49,18 @@ class Layout extends PureComponent {
       this.setState({header: true})
     }
 
+
+    const classForMain = `main ${header ? 'main--with-header': ''} ${footer ? 'main--with-footer': ''}`;
+
     return (
         <React.Fragment>
           {header && this.renderHeader(header)}
-          {children && this.renderMain(children)}
+
+          <main className={classForMain}>
+            <SectionTitle className="main__title section-title">Main</SectionTitle>
+            {children}
+          </main>
+
           {footer && this.renderFooter(footer)}
         </React.Fragment>
     );
