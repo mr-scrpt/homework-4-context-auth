@@ -12,7 +12,7 @@ class Header extends PureComponent {
            const auto = (
              <div className="header-menu">
                <p className="header-menu__email header-email t-header-email">{email}</p>
-               <button className='t-logout' onClick={()=>{logout()}}>Выйти</button>
+               <button className='header-menu__button t-logout button' onClick={()=>{logout()}}>Выйти</button>
              </div>
            );
            const content = isAuthorized && auto;
